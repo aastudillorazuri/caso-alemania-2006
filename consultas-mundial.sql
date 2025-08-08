@@ -52,7 +52,7 @@ Mostrar el nombre, país y fecha del encuentro de los jugadores que hayan partic
 9 de junio de 2006.
 */
 
-SELECT j.nomJugador, p.nomPais, e.fecha
+SELECT j.nomJugador, p.nomPais, CONVERT(CHAR(10),e.fecha, 103) AS fecha
 FROM Jugador AS j
 LEFT JOIN Encuentro_jugador AS ej
 ON j.idJugador = ej.idJugador
